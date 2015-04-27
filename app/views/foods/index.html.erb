@@ -1,0 +1,47 @@
+<div class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" <%= link_to 'Calorie Mate', controller: 'welcome' %> >Calorie Mate</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav navbar-right">
+				<li> <%= link_to 'Home', controller: 'welcome' %></li>
+				<li><a href="#">Log</a></li>
+				<li><%= link_to 'Menu', controller: 'foods' %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h1> All Foods </h1>
+</div>
+
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Food</th>
+				<th>Calories</th>
+				<th>Protien</th>
+				<th>Carbs</th>
+				<th>Fat</th>
+				<th colspan="2"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @foods.each do |f| %>
+			<tr>
+				<td><%= f.name %></td>
+				<td><%= f.calories %></td>
+				<td><%= f.protien %></td>
+				<td><%=f.carbs %></td>
+				<td><%=f.fat %></td>
+				<td><%= link_to 'Edit', edit_food_path(f) %></td>
+				<td><%= link_to 'Destroy', food_path(f), 
+					method: :delete, data: { confirm: 'Are you sure?'} %></td>
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+</div>

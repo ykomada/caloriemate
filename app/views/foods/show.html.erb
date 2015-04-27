@@ -1,0 +1,28 @@
+<div class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" <%= link_to 'Calorie Mate', controller: 'welcome' %> >Calorie Mate</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav navbar-right">
+				<li> <%= link_to 'Home', controller: 'welcome' %></li>
+				<li><a href="#">Log</a></li>
+				<li><%= link_to 'Menu', controller: 'foods' %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h1>
+	<%= @food.name %>
+	</h1>
+<p><strong>Calories  </strong><%= @food.calories %></p>
+<p><strong>Protien  </strong> <%= @food.protien %></p>
+<p><strong>Carbs  </strong><%= @food.carbs %></p>
+<p><strong>Fat  </strong><%= @food.fat %></p>
+</div>
+
+<div class="container">
+	<%= link_to 'All Foods', controller: 'foods' %>
+</div>

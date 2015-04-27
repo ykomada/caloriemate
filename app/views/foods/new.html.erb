@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" <%= link_to 'Calorie Mate', controller: 'welcome' %> >Calorie Mate</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav navbar-right">
+				<li> <%= link_to 'Home', controller: 'welcome' %></li>
+				<li><a href="#">Log</a></li>
+				<li><%= link_to 'Menu', controller: 'foods' %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h1>Add New Food</h1>
+</div>
+<div class="container">
+	<%= form_for :food, url: foods_path do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %><br>
+		<%= f.label :calories %><br>
+		<%= f.text_field :calories %><br>
+		<%= f.label :protien %><br>
+		<%= f.text_field :protien %><br>
+		<%= f.label :carbs %><br>
+		<%= f.text_field :carbs %><br>
+		<%= f.label :fat %><br>
+		<%= f.text_field :fat %><br>
+	</p>
+	<p>
+	<%= f.submit %>
+	</p>
+	<% end %>
+</div>
+
