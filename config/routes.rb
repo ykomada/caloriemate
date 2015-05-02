@@ -1,6 +1,10 @@
 Caloriemate::Application.routes.draw do
   
   resources :foods
+
+  resources :days
+
+  #resources :menus
   
   root :to => 'welcome#index'
 

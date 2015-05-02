@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150417073420) do
+ActiveRecord::Schema.define(:version => 20150427073233) do
+
+  create_table "days", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "foods", :force => true do |t|
     t.string   "name"
@@ -22,5 +27,15 @@ ActiveRecord::Schema.define(:version => 20150417073420) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "menus", :force => true do |t|
+    t.integer  "food_id"
+    t.integer  "day_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "menus", ["day_id"], :name => "index_menus_on_day_id"
+  add_index "menus", ["food_id"], :name => "index_menus_on_food_id"
 
 end
