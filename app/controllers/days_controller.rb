@@ -27,7 +27,17 @@ def create
 	end
 
 	def edit
-		@day = Day.find(params[:day])
+		@day = Day.find(params[:id])
+	end
+
+	def update
+		@day = Day.find(params[:id])
+
+		@menu = Menu.new(params[:menu])
+		@menu.day_id = @day.id
+		@menu.save
+
+		redirect_to @day
 	end
 
 end
