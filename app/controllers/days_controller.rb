@@ -1,5 +1,9 @@
 class DaysController < ApplicationController
 
+	def index
+		@food = Food.all
+	end
+
 	def new
 		@day = Day.new
 		@menu = Menu.new
@@ -20,6 +24,10 @@ def create
 	
 	def show
 		@day = Day.find(params[:id])
+	end
+
+	def edit
+		@day = Day.find(params[:day])
 	end
 
 end

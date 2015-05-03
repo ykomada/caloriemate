@@ -14,5 +14,34 @@
 </div>
 
 <div class="container">
+	<%#= Need to change the Day ID below to a Date %>
 	<h1>Day <%= @day.id %></h1><br>
-	<h3> Eaten: <%= @day.menus %></h3>
+	<h3> Eaten: </h3>
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<th>Food</th>
+				<th>Calories</th>
+				<th>Protien</th>
+				<th>Carbs</th>
+				<th>Fat</th>
+				<th colspan = "2"></th>
+			</thead>
+			<tbody>
+				<% @day.foods.each do |f| %>
+				<tr>
+					<td><%= f.name %></td>
+					<td><%= f.calories %></td>
+					<td><%= f.protien %></td>
+					<td><%= f.carbs %></td>
+					<td><%= f.fat %></td>
+					<%#= Need to add Edit and Delete %>
+				</tr>
+			</tbody>
+			<% end %>
+		</table>
+	</div>
+
+	<div class="container">
+		<%= link_to 'Daily Log', controller: 'days' %>
+	</div>
