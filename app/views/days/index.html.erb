@@ -1,1 +1,42 @@
-placeholder page
+<div class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" <%= link_to 'Calorie Mate', controller: 'welcome' %> >Calorie Mate</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav navbar-right">
+				<li> <%= link_to 'Home', controller: 'welcome' %></li>
+				<li><a href="#">Log</a></li>
+				<li><%= link_to 'Menu', controller: 'foods' %></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+			<th>Date</th>
+			<th>Total Calories</th>
+			<th>Total Proiten</th>
+			<th>Total Carbs</th>
+			<th>Total Fat</th>
+			<th clospan="2"></th>
+		</thead>
+		<tbody>
+			<% @days.each do |d| %>
+		<tr>
+			<td><%= d.id %></td>
+			<td><%= d.total_calories %></td>
+			<td><%= d.total_protien %></td>
+			<td><%= d.total_carbs %></td>
+			<td><%= d.total_fat %></td>
+			<td><%= link_to 'Edit', edit_day_path(d) %></td>
+			<td><%= link_to 'Destroy', day_path(d), 
+				method: :delete, data: { confirm: 'Are you sure?'} %>
+			</td>
+		</tr>
+		</tbody>
+		<% end %>
+	</table>
+</div>

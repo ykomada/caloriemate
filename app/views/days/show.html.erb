@@ -41,7 +41,19 @@
 			<% end %>
 		</table>
 	</div>
-
-	<div class="container">
-		<%= link_to 'Daily Log', controller: 'days' %>
-	</div>
+<div class="container">
+	<table class="table table-bordered">
+		<thead>
+			<th><strong>Total Calories</strong> </th>
+			<th><strong>Total Protien</strong></th>
+			<th><strong>Total Carbs</strong></th>
+			<th><strong>Total Fat</strong></th>
+		</thead>
+		<tbody>
+			<td><%= @day.total_calories %> </td>
+			<td><%= @day.total_protien %></td>
+			<td><%= @day.total_carbs %></td>
+			<td><%= @day.total_fat %></td>
+		</tbody>
+	</table>
+</div>

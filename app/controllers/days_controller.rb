@@ -1,7 +1,7 @@
 class DaysController < ApplicationController
 
 	def index
-		@food = Food.all
+		@days = Day.all
 	end
 
 	def new
@@ -36,6 +36,13 @@ def create
 		@menu = Menu.new(params[:menu])
 		@menu.day_id = @day.id
 		@menu.save
+
+		redirect_to @day
+	end
+
+	def destroy
+		@day = Day.find(params[:id])
+		@day.destroy
 
 		redirect_to @day
 	end
