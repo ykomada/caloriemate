@@ -6,10 +6,12 @@ gem 'bootstrap-sass', '~>3.3.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :development do
 gem 'sqlite3'
 
 gem 'pry-rails'
 #pry-rails is the gem to check what parameters are being passed
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
