@@ -7,7 +7,7 @@ gem 'bootstrap-sass', '~>3.3.4'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-gem 'sqlite3'
+gem 'sqlite3', '1.3.10'
 
 gem 'pry-rails'
 #pry-rails is the gem to check what parameters are being passed
