@@ -21,7 +21,7 @@
 			<th>Total Proiten</th>
 			<th>Total Carbs</th>
 			<th>Total Fat</th>
-			<th clospan="2"></th>
+			<th clospan="3"></th>
 		</thead>
 		<tbody>
 			<% @days.each do |d| %>
@@ -31,6 +31,7 @@
 			<td><%= d.total_protien %></td>
 			<td><%= d.total_carbs %></td>
 			<td><%= d.total_fat %></td>
+			<td><%= link_to 'View', day_path(d)%></td>
 			<td><%= link_to 'Edit', edit_day_path(d) %></td>
 			<td><%= link_to 'Destroy', day_path(d), 
 				method: :delete, data: { confirm: 'Are you sure?'} %>
